@@ -10,6 +10,7 @@
     <title>COVID19 Tracker</title>
 </head>
 <body>
+<div class="container">
 <h1> Corona Virus Tracker </h1>
 
 <p> Current number of cases </p>
@@ -17,16 +18,20 @@
 <div class="jumbotron">
     <h1 class="display-4" th:text="${totalReportedCases}"></h1>
     <p class="lead">Today current number of cases</p>
-    <!--        <hr class="my-4">-->
+
+    <hr class="my-4">
+    <p>
+        <span> New cases : </span>
+        <span th:text="${totalNewCases}">  </span>
+    </p>
     <!--        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>-->
     <!--        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>-->
 </div>
 
 <!--    <p th:text="${testName}"></p>-->
 
-<div class="container">
 
-    <table>
+    <table class="table table-striped">
         <tr>
             <th> State </th>
             <th> Country </th>
@@ -37,7 +42,7 @@
             <td th:text="${locationStat.state}"></td>
             <td th:text="${locationStat.country}"></td>
             <td th:text="${locationStat.latestTotalCases}">0</td>
-            <td th:text="${locationStat.diffFromPrevDay}">0</td>
+            <td th:text="${locationStat.diffFromPrevDay }">0</td>
         </tr>
     </table>
 </div>
